@@ -1,0 +1,35 @@
+<div class="modal">
+  <form [formGroup]="pokemonChange" (ngSubmit)="onSubmit()">
+    <div class="container-modal">
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label for="name">Nome</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <mat-label for="type">Tipo</mat-label>
+        <input matInput formControlName="type" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label for="description">Descrição</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+      <div>
+        <button
+          mat-button
+          class="button-modal"
+          type="button"
+          (click)="bsModalRef.hide()"
+        >
+          FECHAR
+        </button>
+        <button mat-button class="button-modal" type="submit">
+          {{ entry == 0 ? "ADICIONAR" : "ALTERAR" }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
